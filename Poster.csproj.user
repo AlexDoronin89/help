@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="View\AddActorWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AddMovieWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AddSessionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminManagementWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\LoginUserWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\MovieWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\PosterWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TicketWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="View\AddActorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AddMovieWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AddSessionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminManagementWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\LoginUserWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MovieWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PosterWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TicketWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

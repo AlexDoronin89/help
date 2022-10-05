@@ -1,0 +1,16 @@
+﻿<Window x:Class="Poster.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Poster"
+        mc:Ignorable="d"
+        Title="LoginWindow" MaxHeight="140" MaxWidth="280"  MinHeight="130" MinWidth="270">
+    
+    <Grid>
+        <StackPanel Margin="3" Orientation="Horizontal">
+            <Button Content="Войти как Админ" Margin="3" Command="{Binding CreateAdminWindow}" />
+            <Button Content="Войти как Пользователь" Margin="3" Command="{Binding CreateLoginUserWindow}"/>
+        </StackPanel>
+    </Grid>
+</Window>

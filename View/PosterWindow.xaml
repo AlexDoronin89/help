@@ -1,0 +1,44 @@
+﻿<Window x:Class="Poster.View.PosterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Poster.View"
+        mc:Ignorable="d"
+        Title="PosterWindow" MaxHeight="700" MaxWidth="955"  MinHeight="680" MinWidth="935">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <StackPanel Grid.Row="0"  Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Афиша" FontSize="50" Margin="5"/>
+                <StackPanel Margin="5">
+                    <TextBlock FontSize="20" Text="Поиск фильма" Margin="5"/>
+                    <TextBox Margin="10" MinWidth="150" MaxWidth="150"   FontSize="25" />
+                </StackPanel>
+                <Button Content="Поиск" Margin="5" MinHeight="40" MinWidth="90" FontSize="20"/>
+                <!--<Button Content="Открыть" Margin="5" MinHeight="40" MinWidth="90" FontSize="20" Command="{Binding CreateMovieWindow}"/>-->
+            </StackPanel>
+        </StackPanel>
+
+        <ListBox Grid.Row="1" ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Image MinHeight="185" MinWidth="155" Margin="5" Source="{Binding Picture}"/>
+                        <Label Content="{Binding Id}" />
+                        <Button FontSize="30" Content="{Binding Title }" Margin="5" Command="{Binding OpenMovieWindow}" CommandParameter="{Binding Movie}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

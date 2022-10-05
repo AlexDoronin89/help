@@ -1,0 +1,20 @@
+﻿Poster
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\Alex\source\repos\Новая папка (2)\obj\Debug\netcoreapp3.1\
+Poster
+none
+false
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+C:\Users\Alex\source\repos\Новая папка (2)\App.xaml
+9269515967
+
+34600541073
+206686020661
+View\AddActorWindow.xaml;View\AddMovieWindow.xaml;View\AddSessionWindow.xaml;View\AdminManagementWindow.xaml;View\LoginUserWindow.xaml;View\LoginWindow.xaml;View\MovieWindow.xaml;View\PosterWindow.xaml;View\TicketWindow.xaml;
+
+False
+

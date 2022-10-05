@@ -1,0 +1,29 @@
+﻿<Window x:Class="Poster.View.AddSessionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Poster.ViewModel"
+        xmlns:local="clr-namespace:Poster.View"
+        mc:Ignorable="d"
+        Title="AddSessionWindow" MaxHeight="455" MaxWidth="240" MinHeight="435" MinWidth="230">
+    <Window.DataContext>
+        <vm:AddSessionViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Фильм" FontSize="20" Margin="5"/>
+            <ComboBox Margin="5" />
+            <TextBlock Text="Город" FontSize="20" Margin="5"/>
+            <ComboBox  Margin="5" />
+            <TextBlock Text="Кинотеатр" FontSize="20" Margin="5"/>
+            <ComboBox  Margin="5" />
+            <TextBlock Text="Зал" FontSize="20" Margin="5" />
+            <ComboBox  Margin="5" />
+            <TextBlock Text="Время" FontSize="17" Margin="5" />
+            <DatePickerTextBox Margin="5" />
+
+            <Button Content="Добавление" MinHeight="50" Margin="15"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="Poster.View.AddMovieWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Poster.ViewModel"
+        xmlns:local="clr-namespace:Poster.View" 
+        mc:Ignorable="d"
+        Title="AddMovieWindow" MaxHeight="470" MaxWidth="250" MinHeight="450" MinWidth="230">
+    <Window.DataContext>
+        <vm:AddMovieViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Название фильма" FontSize="20" Margin="5"/>
+            <TextBox Margin="5" />
+            <TextBlock Text="Режиссёр" FontSize="20" Margin="5"/>
+            <TextBox  Margin="5" />
+            <TextBlock Text="Актёр" FontSize="20" Margin="5"/>
+            <ComboBox  Margin="5" ItemsSource="{Binding Actor}"/>
+            <TextBlock Text="Рейтинг" FontSize="20" Margin="5" />
+            <ComboBox  Margin="5" />
+            <TextBlock Text="Описание" FontSize="17" Margin="5" />
+            <TextBox Margin="5" />
+
+            <Button Content="Добавление" MinHeight="50" Margin="15"/>
+        </StackPanel>
+    </Grid>
+</Window>

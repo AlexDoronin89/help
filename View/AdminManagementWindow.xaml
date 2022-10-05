@@ -1,0 +1,26 @@
+﻿<Window x:Class="Poster.View.AdminManagementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Poster.ViewModel"
+        xmlns:local="clr-namespace:Poster.View"
+        mc:Ignorable="d"
+        Title="AdminManagementWindow" MinHeight="265" MinWidth="590" MaxHeight="285" MaxWidth="610">
+    <Window.DataContext>
+        <vm:AdminManagementViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Content="Добавить Фильм"  Margin="5"  Grid.Column="0" Command="{Binding CreateAddMovieWindow}"/>
+        <Button Content="Добавить Актёра"  Margin="5"  Grid.Column="1" Command="{Binding CreateAddActorWindow}"/>
+        <Button Content="Добавить Сеанс"  Margin="5"  Grid.Column="2" Command="{Binding CreateAddSessionWindow}"/>
+        <Button Content="Добавить Зал"  Margin="5"  Grid.Column="3" Command="{Binding CreateAddHallWindow}"/>
+    </Grid>
+</Window>
