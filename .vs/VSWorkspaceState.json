@@ -1,11 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Model",
-    "\\Model\\DBModels",
-    "\\View",
-    "\\ViewModel"
+    ""
   ],
-  "SelectedNode": "\\View\\PosterWindow.xaml",
   "PreviewInSolutionExplorer": false
 }
