@@ -14,12 +14,27 @@ namespace Poster.ViewModel
 {
     class PosterViewModel : INotifyPropertyChanged
     {
+        public ObservableCollection<PosterMovieViewModel> PosterMovies { get; set; }
         private Movie _selectedMovie;
         private PosterData _model;
-       
-        public ObservableCollection<PosterMovieViewModel> PosterMovies { get; set; }
+        private ObservableCollection<IReadOnlyMovie> _movies;
+        private Window _window;
+        
+        
 
-        public ObservableCollection<IReadOnlyMovie> Movies { get; private set; }
+        public PosterViewModel(PosterData model,Window window)
+        {
+            _model = model;
+            _movies = new ObservableCollection<IReadOnlyMovie>(_model.GetAllMovies());
+            _window = window;
+
+            PosterMovies = new ObservableCollection<PosterMovieViewModel>();
+
+            foreach(var movie in _movies)
+            {
+                PosterMovies.Add(new PosterMovieViewModel(_window,movie)); ;
+            }
+        }
 
         public Movie SelectedMovie
         {
@@ -31,14 +46,6 @@ namespace Poster.ViewModel
             }
         }
 
-        public PosterViewModel(PosterData model)
-        {
-            _model = model;
-            Movies = new ObservableCollection<IReadOnlyMovie>(_model.GetAllMovies());
-        }
-
-        
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged([CallerMemberName] string propertyName = "") =>
@@ -47,15 +54,46 @@ namespace Poster.ViewModel
 
     internal class PosterMovieViewModel
     {
-        Movie _movie;
         private CommandTemplate _openMovieWindow;
         private Window _window;
+        private IReadOnlyMovie _movie;
 
-        public PosterMovieViewModel(Window window,Movie movie)
+        public int Id
+        {
+            get => _movie.Id;
+            //set
+            //{
+            //    _id = value;
+            //    OnPropertyChanged(nameof(Id));
+            //}
+        }
+
+        public string Title
+        {
+            get => _movie.Title;
+            //set
+            //{
+            //    _title = value;
+            //    OnPropertyChanged(nameof(Title));
+            //}
+        }
+
+        public byte[] Picture
+        {
+            get => _movie.Picture;
+            //set
+            //{
+            //    _picture = value;
+            //    OnPropertyChanged(nameof(Picture));
+            //}
+        }
+
+        public PosterMovieViewModel(Window window, IReadOnlyMovie movie)
         {
             _window = window;
             _movie = movie;
         }
+
         public CommandTemplate OpenMovieWindow
         {
             get
@@ -69,7 +107,7 @@ namespace Poster.ViewModel
         public void AddMovieWindow(object obj)
         {
             MovieWindow movieWindow = new MovieWindow();
-            MovieViewModel movieViewModel = new MovieViewModel(_window,_movie);
+            MovieViewModel movieViewModel = new MovieViewModel(movieWindow, _movie);
 
             _window.Hide();
 
@@ -77,7 +115,8 @@ namespace Poster.ViewModel
             movieWindow.ShowDialog();
             _window.Show();
         }
-        
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

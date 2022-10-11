@@ -19,11 +19,10 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Grid.Column="0">
-            <Image Grid.Row="0" Grid.Column="0" />
+            <Image Source="{Binding Picture}" Grid.Row="0" Grid.Column="0" />
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" >
-            <TextBlock Text="Фильм"   FontSize="50"/>
-            <TextBlock Margin="0 140 0 0"  HorizontalAlignment="Center"  Text="Расписание" FontSize="40" />
+            <TextBlock Text="{Binding Title}"   FontSize="50"/>
             <Button Content="Оформить билет" HorizontalAlignment="Right" Margin="50 50 0 50" Command="{Binding CreateTicketWindow}"/>
         </StackPanel>
         <ListBox Grid.Row="1" Grid.ColumnSpan="2" >
@@ -33,7 +32,7 @@
                     <StackPanel>
                         <TextBlock Text="Зал" FontSize="40"/>
                         <TextBlock Text="Кинотеатр" FontSize="40"/>
-                        <DatePickerTextBox />
+                        <TextBlock Text=""/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -43,23 +42,23 @@
             <TextBlock Text="О фильме" FontSize="35" HorizontalAlignment="Center"/>
 
             <StackPanel Orientation="Horizontal"  >
-                <TextBlock Text="Дата выхода" FontSize="15"/>
+                <TextBlock Text="{Binding RealeaseDate}" FontSize="15"/>
                 <DatePickerTextBox/>
 
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <TextBlock FontSize="15" Text="Актёры"/>
+                <TextBlock FontSize="15" Text="{Binding ActorMovies}"/>
                 <TextBox FontSize="15" Text="Актёры" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <TextBlock FontSize="15" Text="Режиссёр"/>
+                <TextBlock FontSize="15" Text="{Binding Producer}"/>
                 <TextBox FontSize="15" Text="Режиссёр"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <TextBlock FontSize="15" Text="Рейтинг 1/10"/>
+                <TextBlock FontSize="15" Text="{Binding Rating}"/>
                 <TextBox Text="Рейтинг"/>
             </StackPanel>
 

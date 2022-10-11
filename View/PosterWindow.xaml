@@ -29,13 +29,13 @@
             </StackPanel>
         </StackPanel>
 
-        <ListBox Grid.Row="1" ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie}">
+        <ListBox Grid.Row="1" ItemsSource="{Binding PosterMovies}" SelectedItem="{Binding SelectedMovie}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <Image MinHeight="185" MinWidth="155" Margin="5" Source="{Binding Picture}"/>
                         <Label Content="{Binding Id}" />
-                        <Button FontSize="30" Content="{Binding Title }" Margin="5" Command="{Binding OpenMovieWindow}" CommandParameter="{Binding Movie}" />
+                        <Button FontSize="30" Content="{Binding Title}" Margin="5" Command="{Binding OpenMovieWindow}"  />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

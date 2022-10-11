@@ -62,7 +62,7 @@ namespace Poster.ViewModel
         public void AddPosterWindow(object obj)
         {
             PosterWindow posterWindow = new PosterWindow();
-            PosterViewModel posterWindowViewModel = new PosterViewModel(_model);
+            PosterViewModel posterWindowViewModel = new PosterViewModel(_model,posterWindow);
 
             _window.Hide();
 
