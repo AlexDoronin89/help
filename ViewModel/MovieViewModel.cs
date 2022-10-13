@@ -1,8 +1,10 @@
-﻿using Poster.Model.DBModels;
+﻿using Poster.Model;
+using Poster.Model.DBModels;
 using Poster.Model.Tools;
 using Poster.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -12,12 +14,7 @@ namespace Poster.ViewModel
 {
     class MovieViewModel : INotifyPropertyChanged
     {
-        private string _title;
         private DateTime? _releaseDate;
-        private string _producer;
-        private string _description;
-        private double? _rating;
-        private byte[] _picture;
         private ICollection<ActorMovie> _actorMovies;
         private CommandTemplate _openTicketWindow;
         private Window _window;
@@ -27,68 +24,35 @@ namespace Poster.ViewModel
             _window = window;
             _movie = movie;
         }
-        public virtual ICollection<ActorMovie> ActorMovies
-        {
-            get => _actorMovies;
-            set
-            {
-                _actorMovies = value;
-                OnPropertyChanged(nameof(ActorMovies));
-            }
-        }
         public string Title
         {
-            get => _title;
-            set
-            {
-                _title = value;
-                OnPropertyChanged(nameof(Title));
-            }
+            get => _movie.Title;
+            
         }
         public DateTime? ReleaseDate
         {
-            get => _releaseDate;
-            set
-            {
-                _releaseDate = value;
-                OnPropertyChanged(nameof(ReleaseDate));
-            }
+            get => _movie.ReleaseDate;
+            
         }
         public string Producer
         {
-            get => _producer;
-            set
-            {
-                _producer = value;
-                OnPropertyChanged(nameof(Producer));
-            }
+            get => _movie.Producer;
+            
         }
         public string Description
         {
-            get => _description;
-            set
-            {
-                _description = value;
-                OnPropertyChanged(nameof(Description));
-            }
+            get => _movie.Description;
+            
         }
         public double? Rating
         {
-            get => _rating;
-            set
-            {
-                _rating = value;
-                OnPropertyChanged(nameof(Rating));
-            }
+            get => _movie.Rating;
+            
         }
         public byte[] Picture
         {
-            get => _picture;
-            set
-            {
-                _picture = value;
-                OnPropertyChanged(nameof(Picture));
-            }
+            get => _movie.Picture;
+            
         }
         public CommandTemplate CreateTicketWindow
         {

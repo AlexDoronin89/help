@@ -102,6 +102,11 @@ namespace Poster.Model.DBModels
             }
         }
 
+        public override string ToString()
+        {
+            return ReleaseDate.ToString();
+        }
+
         //public Movie(string title, DateTime releaseDate, string producer, string description, double rating, byte[] picture)
         //{
         //    Title = title;

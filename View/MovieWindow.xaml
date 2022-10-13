@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Poster.View"
         mc:Ignorable="d"
-        Title="MovieWindow" MinHeight="635"  MinWidth="800" MaxHeight="655" MaxWidth="820">
+        Title="MovieWindow" MinHeight="650"  MinWidth="800" MaxHeight="655" MaxWidth="820">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -41,25 +41,24 @@
         <StackPanel Grid.Row="3" Grid.ColumnSpan="2"  Orientation="Vertical">
             <TextBlock Text="О фильме" FontSize="35" HorizontalAlignment="Center"/>
 
-            <StackPanel Orientation="Horizontal"  >
+            <StackPanel Orientation="Horizontal" Margin="5"  >
+                <Label Content="Дата выхода фильма"  />
                 <TextBlock Text="{Binding RealeaseDate}" FontSize="15"/>
-                <DatePickerTextBox/>
-
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin="5" >
+                <Label Content="Актёры" />
                 <TextBlock FontSize="15" Text="{Binding ActorMovies}"/>
-                <TextBox FontSize="15" Text="Актёры" />
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Content="Продюсер" />
                 <TextBlock FontSize="15" Text="{Binding Producer}"/>
-                <TextBox FontSize="15" Text="Режиссёр"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Content="Рейтинг" />
                 <TextBlock FontSize="15" Text="{Binding Rating}"/>
-                <TextBox Text="Рейтинг"/>
             </StackPanel>
 
         </StackPanel>
