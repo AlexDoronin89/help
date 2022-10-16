@@ -834,11 +834,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alex\\source\\repos\\Новая папка (2)\\Poster.csproj",
+      "projectUniqueName": "C:\\Users\\Alex\\Source\\Repos\\help\\Poster.csproj",
       "projectName": "Poster",
-      "projectPath": "C:\\Users\\Alex\\source\\repos\\Новая папка (2)\\Poster.csproj",
+      "projectPath": "C:\\Users\\Alex\\Source\\Repos\\help\\Poster.csproj",
       "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alex\\source\\repos\\Новая папка (2)\\obj\\",
+      "outputPath": "C:\\Users\\Alex\\Source\\Repos\\help\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",

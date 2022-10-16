@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Model",
-    "\\Model\\DBModels",
-    "\\View",
     "\\ViewModel"
   ],
-  "SelectedNode": "\\View\\MovieWindow.xaml",
+  "SelectedNode": "\\ViewModel\\MovieViewModel.cs",
   "PreviewInSolutionExplorer": false
 }

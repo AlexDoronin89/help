@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Poster.View"
         mc:Ignorable="d"
-        Title="MovieWindow" MinHeight="650"  MinWidth="800" MaxHeight="655" MaxWidth="820">
-    
+        Title="MovieWindow" MinHeight="700"  MinWidth="800" >
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -43,12 +43,22 @@
 
             <StackPanel Orientation="Horizontal" Margin="5"  >
                 <Label Content="Дата выхода фильма"  />
-                <TextBlock Text="{Binding RealeaseDate}" FontSize="15"/>
+                <TextBlock Text="{Binding ReleaseDate}" FontSize="15"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="5" >
+            <StackPanel Orientation="Vertical" Margin="5" >
                 <Label Content="Актёры" />
-                <TextBlock FontSize="15" Text="{Binding ActorMovies}"/>
+                <ListBox ItemsSource="{Binding Actors}"   MinHeight="150" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                            <TextBlock FontSize="15" Text="{Binding Name}"/>
+                            <TextBlock FontSize="15" Text="{Binding Surname}"/>
+                            <TextBlock FontSize="15" Text="{Binding Patronymic}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="5">

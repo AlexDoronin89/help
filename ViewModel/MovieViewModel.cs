@@ -14,45 +14,50 @@ namespace Poster.ViewModel
 {
     class MovieViewModel : INotifyPropertyChanged
     {
-        private DateTime? _releaseDate;
-        private ICollection<ActorMovie> _actorMovies;
         private CommandTemplate _openTicketWindow;
         private Window _window;
         private IReadOnlyMovie _movie;
-        public MovieViewModel (Window window,IReadOnlyMovie movie)
+        private PosterData _model;
+
+        public ObservableCollection<Actor> Actors { get; set; }
+        public MovieViewModel(Window window, PosterData model,IReadOnlyMovie movie)
         {
             _window = window;
+            _model = model;
             _movie = movie;
+            _movie.ReleaseDate.ToString();
+           Actors = new ObservableCollection<Actor>(_model.GetAllActors());
         }
         public string Title
         {
             get => _movie.Title;
-            
+
         }
         public DateTime? ReleaseDate
         {
+
             get => _movie.ReleaseDate;
-            
+
         }
         public string Producer
         {
             get => _movie.Producer;
-            
+
         }
         public string Description
         {
             get => _movie.Description;
-            
+
         }
         public double? Rating
         {
             get => _movie.Rating;
-            
+
         }
         public byte[] Picture
         {
             get => _movie.Picture;
-            
+
         }
         public CommandTemplate CreateTicketWindow
         {
@@ -80,8 +85,10 @@ namespace Poster.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-    internal class MovieTicket
+
+    internal class MovieActor
     {
+        
 
     }
 

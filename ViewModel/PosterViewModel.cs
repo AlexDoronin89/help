@@ -32,7 +32,7 @@ namespace Poster.ViewModel
 
             foreach(var movie in _movies)
             {
-                PosterMovies.Add(new PosterMovieViewModel(_window,movie)); ;
+                PosterMovies.Add(new PosterMovieViewModel(_window,movie,model)); ;
             }
         }
 
@@ -57,41 +57,30 @@ namespace Poster.ViewModel
         private CommandTemplate _openMovieWindow;
         private Window _window;
         private IReadOnlyMovie _movie;
-
+        private PosterData _model;
+        private ObservableCollection<Actor> _actors;
         public int Id
         {
             get => _movie.Id;
-            //set
-            //{
-            //    _id = value;
-            //    OnPropertyChanged(nameof(Id));
-            //}
         }
 
         public string Title
         {
             get => _movie.Title;
-            //set
-            //{
-            //    _title = value;
-            //    OnPropertyChanged(nameof(Title));
-            //}
         }
 
         public byte[] Picture
         {
             get => _movie.Picture;
-            //set
-            //{
-            //    _picture = value;
-            //    OnPropertyChanged(nameof(Picture));
-            //}
+            
         }
 
-        public PosterMovieViewModel(Window window, IReadOnlyMovie movie)
+        public PosterMovieViewModel(Window window, IReadOnlyMovie movie,PosterData model)
         {
             _window = window;
+            _model= model;
             _movie = movie;
+            _actors = new ObservableCollection<Actor>(_model.GetAllActors());
         }
 
         public CommandTemplate OpenMovieWindow
@@ -107,7 +96,7 @@ namespace Poster.ViewModel
         public void AddMovieWindow(object obj)
         {
             MovieWindow movieWindow = new MovieWindow();
-            MovieViewModel movieViewModel = new MovieViewModel(movieWindow, _movie);
+            MovieViewModel movieViewModel = new MovieViewModel(_window, _model,_movie);
 
             _window.Hide();
 
