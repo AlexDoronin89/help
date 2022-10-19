@@ -107,18 +107,12 @@ namespace Poster.Model.DBModels
             return ReleaseDate.ToString();
         }
 
-        //public Movie(string title, DateTime releaseDate, string producer, string description, double rating, byte[] picture)
-        //{
-        //    Title = title;
-        //    ReleaseDate = releaseDate;
-        //    Producer = producer;
-        //    Description = description;
-        //    Rating = rating;
-        //    Picture = picture;
+        public Movie()
+        {
 
-        //    ActorMovies = new HashSet<ActorMovie>();
-        //    Sessions = new HashSet<Session>();
-        //}
+            ActorMovies = new HashSet<ActorMovie>();
+            Sessions = new HashSet<Session>();
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -151,5 +145,8 @@ namespace Poster.Model.DBModels
         public string Description { get; }
         public double? Rating { get; }
         public byte[] Picture { get; }
+
+        public ICollection<ActorMovie> ActorMovies { get;}
+        public ICollection<Session> Sessions { get; }
     }
 }

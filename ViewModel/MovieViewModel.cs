@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows;
@@ -20,14 +21,16 @@ namespace Poster.ViewModel
         private PosterData _model;
 
         public ObservableCollection<Actor> Actors { get; set; }
+
         public MovieViewModel(Window window, PosterData model,IReadOnlyMovie movie)
         {
             _window = window;
-            _model = model;
             _movie = movie;
+            _model = model;
             _movie.ReleaseDate.ToString();
-           Actors = new ObservableCollection<Actor>(_model.GetAllActors());
+            Actors = new ObservableCollection<Actor>(_model.GetAllActors().Where(actor=>movie.ActorMovies.Count(b=>b.ActorId==actor.Id)>0));
         }
+       
         public string Title
         {
             get => _movie.Title;

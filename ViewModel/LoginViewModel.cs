@@ -1,4 +1,5 @@
 ﻿using Poster.Model;
+using Poster.Model.DBModels;
 using Poster.Model.Tools;
 using Poster.View;
 using System;
@@ -16,7 +17,6 @@ namespace Poster.ViewModel
         private CommandTemplate _openAdminWindow;
         private CommandTemplate _openLoginUserWindow;
         private Window _window;
-
         public LoginViewModel(Window window, PosterData model)
         {
             _window = window;

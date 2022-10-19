@@ -18,7 +18,6 @@ namespace Poster.ViewModel
         private CommandTemplate _getCities;
         private PosterData _model;
         private Window _window;
-
         public ObservableCollection</*IReadOnly*/City> Cities { get; private set; }
         public ObservableCollection</*IReadOnly*/Cinema> Cinemas { get; private set; }
 
@@ -26,7 +25,8 @@ namespace Poster.ViewModel
         public LoginUserVeiwModel(Window window, PosterData model)
         {
             _window = window;
-            _model = model;
+            _model = model; 
+        
             Cities = (ObservableCollection</*IReadOnly*/City>)_model.GetAllCities();
             Cinemas = (ObservableCollection</*IReadOnly*/Cinema>)_model.GetAllCinemas();
         }

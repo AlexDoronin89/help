@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Poster.View"
         mc:Ignorable="d"
-        Title="MovieWindow" MinHeight="700"  MinWidth="800" >
+        Title="MovieWindow" MinHeight="750"  MinWidth="800" >
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -48,7 +48,7 @@
 
             <StackPanel Orientation="Vertical" Margin="5" >
                 <Label Content="Актёры" />
-                <ListBox ItemsSource="{Binding Actors}"   MinHeight="150" >
+                <ListBox Grid.Row="1" ItemsSource="{Binding Actors}"   MaxHeight="75" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>

@@ -19,15 +19,13 @@ namespace Poster.ViewModel
         private PosterData _model;
         private ObservableCollection<IReadOnlyMovie> _movies;
         private Window _window;
-        
-        
+
 
         public PosterViewModel(PosterData model,Window window)
         {
             _model = model;
             _movies = new ObservableCollection<IReadOnlyMovie>(_model.GetAllMovies());
             _window = window;
-
             PosterMovies = new ObservableCollection<PosterMovieViewModel>();
 
             foreach(var movie in _movies)
@@ -58,7 +56,6 @@ namespace Poster.ViewModel
         private Window _window;
         private IReadOnlyMovie _movie;
         private PosterData _model;
-        private ObservableCollection<Actor> _actors;
         public int Id
         {
             get => _movie.Id;
@@ -80,7 +77,6 @@ namespace Poster.ViewModel
             _window = window;
             _model= model;
             _movie = movie;
-            _actors = new ObservableCollection<Actor>(_model.GetAllActors());
         }
 
         public CommandTemplate OpenMovieWindow
