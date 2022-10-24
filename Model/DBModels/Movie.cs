@@ -107,12 +107,11 @@ namespace Poster.Model.DBModels
             return ReleaseDate.ToString();
         }
 
-        public Movie()
-        {
-
-            ActorMovies = new HashSet<ActorMovie>();
-            Sessions = new HashSet<Session>();
-        }
+        //public Movie()
+        //{
+        //    ActorMovies = new HashSet<ActorMovie>();
+        //    Sessions = new HashSet<Session>();
+        //}
 
         public event PropertyChangedEventHandler PropertyChanged;
 

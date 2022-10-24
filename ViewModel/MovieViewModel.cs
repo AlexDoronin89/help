@@ -19,7 +19,7 @@ namespace Poster.ViewModel
         private Window _window;
         private IReadOnlyMovie _movie;
         private PosterData _model;
-
+        public ObservableCollection<Session> Sessions;
         public ObservableCollection<Actor> Actors { get; set; }
 
         public MovieViewModel(Window window, PosterData model,IReadOnlyMovie movie)
@@ -29,8 +29,9 @@ namespace Poster.ViewModel
             _model = model;
             _movie.ReleaseDate.ToString();
             Actors = new ObservableCollection<Actor>(_model.GetAllActors().Where(actor=>movie.ActorMovies.Count(b=>b.ActorId==actor.Id)>0));
+            Sessions = new ObservableCollection<Session>(_model.GetAllSessions().Where(a=>movie.ActorMovies.Count(b=>b.MovieId==a.MovieId)>0));
         }
-       
+        
         public string Title
         {
             get => _movie.Title;

@@ -30,8 +30,8 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="Зал" FontSize="40"/>
-                        <TextBlock Text="Кинотеатр" FontSize="40"/>
+                        <TextBlock Text="{Binding Hall}" FontSize="40"/>
+                        <TextBlock Text="{Binding Cinema}" FontSize="40"/>
                         <TextBlock Text=""/>
                     </StackPanel>
                 </DataTemplate>

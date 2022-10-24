@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Collections.ObjectModel;
+using Microsoft.EntityFrameworkCore;
 
 namespace Poster.Model
 {
@@ -221,11 +222,11 @@ namespace Poster.Model
             }
         }
 
-        public IReadOnlyList<IReadOnlySession> GetAllSessions()
+        public IReadOnlyList</*IReadOnly*/Session> GetAllSessions()
         {
             using (PosterDbContext db = new PosterDbContext())
             {
-                return db.Sessions.ToList();
+                return db.Sessions.Include(s=>s.Movie).ToList();
             }
         }
 
@@ -281,7 +282,7 @@ namespace Poster.Model
         {
             using (PosterDbContext db = new PosterDbContext())
             {
-                return db.Movies.ToList();
+                return db.Movies.Include(a=>a.ActorMovies).ToList();
             }
         }
 
