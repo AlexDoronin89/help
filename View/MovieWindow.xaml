@@ -15,28 +15,16 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Grid.Column="0">
             <Image Source="{Binding Picture}" Grid.Row="0" Grid.Column="0" />
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" >
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal"  HorizontalAlignment="Center" >
             <TextBlock Text="{Binding Title}"   FontSize="50"/>
-            <Button Content="Оформить билет" HorizontalAlignment="Right" Margin="50 50 0 50" Command="{Binding CreateTicketWindow}"/>
+            <Button Content="Оформить билет" HorizontalAlignment="Center" Grid.Column="1"  Command="{Binding CreateSessionWindow}"/>
         </StackPanel>
-        <ListBox Grid.Row="1" Grid.ColumnSpan="2" >
-            <ToolBar/>
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Hall}" FontSize="40"/>
-                        <TextBlock Text="{Binding Cinema}" FontSize="40"/>
-                        <TextBlock Text=""/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+       
 
         <StackPanel Grid.Row="3" Grid.ColumnSpan="2"  Orientation="Vertical">
             <TextBlock Text="О фильме" FontSize="35" HorizontalAlignment="Center"/>
@@ -48,7 +36,7 @@
 
             <StackPanel Orientation="Vertical" Margin="5" >
                 <Label Content="Актёры" />
-                <ListBox Grid.Row="1" ItemsSource="{Binding Actors}"   MaxHeight="75" >
+                <ListBox Grid.Row="1" ItemsSource="{Binding Actors}" MinHeight="125"   >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>

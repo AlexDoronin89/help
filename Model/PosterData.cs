@@ -166,11 +166,11 @@ namespace Poster.Model
             }
         }
 
-        public IReadOnlyList<IReadOnlyHall> GetAllHalls()
+        public IReadOnlyList</*IReadOnly*/Hall> GetAllHalls()
         {
             using (PosterDbContext db = new PosterDbContext())
             {
-                return db.Halls.ToList();
+                return db.Halls.Include(s=>s.Sessions).Include(h=>h.Cinema).ToList();
             }
         }
 
@@ -226,7 +226,7 @@ namespace Poster.Model
         {
             using (PosterDbContext db = new PosterDbContext())
             {
-                return db.Sessions.Include(s=>s.Movie).ToList();
+                return db.Sessions.Include(s=>s.Movie).Include(s=>s.Hall).Include(s=>s.Hall.Cinema).ToList();
             }
         }
 

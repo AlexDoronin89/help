@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\SessionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AddActorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,6 +36,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="View\SessionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AddActorWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

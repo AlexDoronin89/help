@@ -72,6 +72,11 @@ namespace Poster.Model.DBModels
             }
         }
 
+        public override string ToString()
+        {
+            return Id.ToString();
+        }
+
         //public Hall(int placesInLine, int cinemaId, int countLine)
         //{
         //    PlacesInLine = placesInLine;

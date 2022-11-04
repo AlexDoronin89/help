@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Alex\Source\Repos\help\App.xaml
-9269515967
+101135942009
 
-34600541073
+36-2067455320
 206686020661
-View\AddActorWindow.xaml;View\AddMovieWindow.xaml;View\AddSessionWindow.xaml;View\AdminManagementWindow.xaml;View\LoginUserWindow.xaml;View\LoginWindow.xaml;View\MovieWindow.xaml;View\PosterWindow.xaml;View\TicketWindow.xaml;
+View\AddActorWindow.xaml;View\AddMovieWindow.xaml;View\AddSessionWindow.xaml;View\AdminManagementWindow.xaml;View\LoginUserWindow.xaml;View\LoginWindow.xaml;View\MovieWindow.xaml;View\PosterWindow.xaml;View\SessionWindow.xaml;View\TicketWindow.xaml;
 
-False
+True
 

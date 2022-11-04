@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Alex\Source\Repos\help\obj\Release\netcoreapp3.1\
+C:\Users\Alex\source\repos\help\obj\Release\netcoreapp3.1\
 Poster
 none
 false
 TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Alex\Source\Repos\help\App.xaml
-9269515967
+C:\Users\Alex\source\repos\help\App.xaml
+101135942009
 
-32-593814428
+341033156475
 206686020661
-View\AddActorWindow.xaml;View\AddMovieWindow.xaml;View\AddSessionWindow.xaml;View\AdminManagementWindow.xaml;View\LoginUserWindow.xaml;View\LoginWindow.xaml;View\MovieWindow.xaml;View\PosterWindow.xaml;View\TicketWindow.xaml;
+View\AddActorWindow.xaml;View\AddMovieWindow.xaml;View\AddSessionWindow.xaml;View\AdminManagementWindow.xaml;View\LoginUserWindow.xaml;View\LoginWindow.xaml;View\MovieWindow.xaml;View\PosterWindow.xaml;View\SessionWindow.xaml;View\TicketWindow.xaml;
 
 True
 

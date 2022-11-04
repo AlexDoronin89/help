@@ -15,11 +15,10 @@ namespace Poster.ViewModel
 {
     class MovieViewModel : INotifyPropertyChanged
     {
-        private CommandTemplate _openTicketWindow;
+        private CommandTemplate _openSessionWindow;
         private Window _window;
         private IReadOnlyMovie _movie;
         private PosterData _model;
-        public ObservableCollection<Session> Sessions;
         public ObservableCollection<Actor> Actors { get; set; }
 
         public MovieViewModel(Window window, PosterData model,IReadOnlyMovie movie)
@@ -29,7 +28,6 @@ namespace Poster.ViewModel
             _model = model;
             _movie.ReleaseDate.ToString();
             Actors = new ObservableCollection<Actor>(_model.GetAllActors().Where(actor=>movie.ActorMovies.Count(b=>b.ActorId==actor.Id)>0));
-            Sessions = new ObservableCollection<Session>(_model.GetAllSessions().Where(a=>movie.ActorMovies.Count(b=>b.MovieId==a.MovieId)>0));
         }
         
         public string Title
@@ -63,24 +61,26 @@ namespace Poster.ViewModel
             get => _movie.Picture;
 
         }
-        public CommandTemplate CreateTicketWindow
+        public CommandTemplate CreateSessionWindow
         {
             get
             {
-                if (_openTicketWindow == null)
-                    _openTicketWindow = new CommandTemplate(AddTicketWindow);
-                return _openTicketWindow;
+                if (_openSessionWindow == null)
+                    _openSessionWindow = new CommandTemplate(AddSessionWindow);
+                return _openSessionWindow;
             }
         }
 
-        public void AddTicketWindow(object obj)
+        public void AddSessionWindow(object obj)
         {
-            TicketWindow ticketWindow = new TicketWindow();
-            TicketViewModel ticketWindowViewModel = new TicketViewModel();
+            SessinWindow sessinWindow = new SessinWindow();
+            SessionWindowViewModel sessionWindowViewModel = new SessionWindowViewModel(_window,_model,_movie);
+            _window.Hide();
 
-            ticketWindow.DataContext = ticketWindowViewModel;
-            ticketWindow.ShowDialog();
-            _window.Show();
+            sessinWindow.DataContext = sessionWindowViewModel;
+            sessinWindow.ShowDialog();
+            _window.Close();
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -88,13 +88,4 @@ namespace Poster.ViewModel
         public void OnPropertyChanged([CallerMemberName] string propertyName = "") =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
-
-
-    internal class MovieActor
-    {
-        
-
-    }
-
-
 }

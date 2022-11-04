@@ -82,6 +82,8 @@ namespace Poster.Model.DBModels
             }
         }
 
+        public string CinemaTitle => Hall.Cinema.Title;
+
         //public Session(DateTime date, int movieId, int hallId)
         //{
         //    Date = date;

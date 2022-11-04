@@ -15,7 +15,7 @@ namespace Poster.ViewModel
     class PosterViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<PosterMovieViewModel> PosterMovies { get; set; }
-        private Movie _selectedMovie;
+        //private Movie _selectedMovie;
         private PosterData _model;
         private ObservableCollection<IReadOnlyMovie> _movies;
         private Window _window;
@@ -34,15 +34,15 @@ namespace Poster.ViewModel
             }
         }
 
-        public Movie SelectedMovie
-        {
-            get => _selectedMovie;
-            set
-            {
-                _selectedMovie = value;
-                OnPropertyChanged(nameof(SelectedMovie));
-            }
-        }
+        //public Movie SelectedMovie
+        //{
+        //    get => _selectedMovie;
+        //    set
+        //    {
+        //        _selectedMovie = value;
+        //        OnPropertyChanged(nameof(SelectedMovie));
+        //    }
+        //}
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -98,7 +98,7 @@ namespace Poster.ViewModel
 
             movieWindow.DataContext = movieViewModel;
             movieWindow.ShowDialog();
-            _window.Show();
+            _window.Close();
         }
 
 

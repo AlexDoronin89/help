@@ -20,14 +20,21 @@
 
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
-            <Image />
-            <TextBlock Text="Фильм" FontSize="50"/>
+            <Image Source="{Binding Picture}" />
+            <TextBlock Text="{Binding Title}" FontSize="50"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
-            <Grid>
-
-            </Grid>
+            <ListBox Grid.Row="1" ItemsSource="{Binding TicketButtons}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Label Content="{Binding PlacesInLine}" />
+                            <Button FontSize="30" Content="{Binding CountLine}" Margin="5" Command="{Binding OpenMovieWindow}"  />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">

@@ -225,3 +225,5 @@ C:\Users\Alex\Source\Repos\help\obj\Debug\netcoreapp3.1\Poster.csproj.CopyComple
 C:\Users\Alex\Source\Repos\help\obj\Debug\netcoreapp3.1\Poster.dll
 C:\Users\Alex\Source\Repos\help\obj\Debug\netcoreapp3.1\Poster.pdb
 C:\Users\Alex\Source\Repos\help\obj\Debug\netcoreapp3.1\Poster.genruntimeconfig.cache
+C:\Users\Alex\Source\Repos\help\obj\Debug\netcoreapp3.1\View\SessionWindow.g.cs
+C:\Users\Alex\Source\Repos\help\obj\Debug\netcoreapp3.1\View\SessionWindow.baml

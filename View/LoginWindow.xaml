@@ -9,7 +9,6 @@
     
     <Grid>
         <StackPanel Margin="3" Orientation="Horizontal">
-            <Button Content="Войти как Админ" Margin="3" Command="{Binding CreateAdminWindow}" />
             <Button Content="Войти как Пользователь" Margin="3" Command="{Binding CreateLoginUserWindow}"/>
         </StackPanel>
     </Grid>

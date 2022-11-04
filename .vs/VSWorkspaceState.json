@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+    "\\View",
     "\\ViewModel"
   ],
   "SelectedNode": "\\ViewModel\\MovieViewModel.cs",
